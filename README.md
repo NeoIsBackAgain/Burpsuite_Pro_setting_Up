@@ -1,4 +1,4 @@
-# Burpsuite_Pro_setting_Up
+# Burpsuite_Pro_setting_Up_Linux 
 
 
 - Linux arm pro
@@ -34,7 +34,7 @@
 		- <img width="591" height="394" alt="圖片" src="https://github.com/user-attachments/assets/a2291152-5dcc-4531-af86-d4c13f606e7b" />
 
 	   ```shell
-			sudo git clone 
+			sudo git clone https://github.com/NeoIsBackAgain/Burpsuite_Pro_setting_Up.git;cd Burpsuite_Pro_setting_Up
 		```
 		```shell
 			sudo mv BurpLoaderKeygen.jar /usr/bin/BurpSuitePro
