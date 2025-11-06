@@ -63,17 +63,55 @@
 		- <img width="1492" height="616" alt="圖片" src="https://github.com/user-attachments/assets/c3e43147-fa0f-4302-972b-ee9848f5f9d8" />
 
 	
-	
-	
-	
 		```shell
-			sudo vim /usr/share/applications/install4j_uw0e4m-BurpSuitePro.desktop
+			vim /usr/bin/BurpSuitePro/run-burp.sh
+  			#!/usr/bin/env bash
+			# wrapper to run Burp with your interactive environment and keep terminal
+			# change if you use zsh/other shell
+			
+			# load profile (optional)
+			if [ -f "$HOME/.profile" ]; then
+			  source "$HOME/.profile"
+			fi
+			# load bashrc for interactive env variables (optional)
+			if [ -f "$HOME/.bashrc" ]; then
+			  source "$HOME/.bashrc"
+			fi
+			
+			# optional: cd to Burp folder so relative paths behave same as terminal
+			cd /usr/bin/BurpSuitePro || true
+			
+			# run java (replace args if needed)
+			exec /usr/bin/BurpSuitePro/jre/bin/java \
+			  --add-opens=java.desktop/javax.swing=ALL-UNNAMED \
+			  --add-opens=java.base/java.lang=ALL-UNNAMED \
+			  --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED \
+			  --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED \
+			  --add-opens=java.base/jdk.internal.org.objectweb.asm.Opcodes=ALL-UNNAMED \
+			  -javaagent:/usr/bin/BurpSuitePro/BurpLoaderKeygen.jar \
+			  -noverify -jar /usr/bin/BurpSuitePro/burpsuite_pro.jar
+
 		```
 	
 	
 		```shell
-			"/usr/bin/BurpSuitePro/jre/bin/java" "--add-opens=java.desktop/javax.swing=ALL-UNNAMED" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.org.objectweb.asm.Opcodes=ALL-UNNAMED" "-javaagent:/usr/bin/BurpSuitePro/BurpLoaderKeygen.jar" "-noverify" "-jar" "/usr/bin/BurpSuitePro/burpsuite_pro.jar" 
+			mkdir -p ~/.local/share/applications
+			cat > ~/.local/share/applications/burpsuite-pro.desktop <<'EOF'
+			[Desktop Entry]
+			Type=Application
+			Name=Burp Suite Professional
+			Comment=Run Burp Suite Professional (via wrapper)
+			Exec=/usr/bin/BurpSuitePro/run-burp.sh
+			Terminal=true
+			Icon=/usr/bin/BurpSuitePro/.install4j/BurpSuitePro.png
+			Categories=Development;Security;
+			StartupWMClass=install4j-burp-StartBurp
+			MimeType=application/x-extension-burp;
+			EOF
+			
+			chmod 644 ~/.local/share/applications/burpsuite-pro.desktop
 		```
+	
 	
 	<img width="1571" height="850" alt="圖片" src="https://github.com/user-attachments/assets/326c2f6e-3b06-4b7e-8f34-2ab6c87e9fb0" />
 
