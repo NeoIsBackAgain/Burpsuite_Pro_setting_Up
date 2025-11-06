@@ -113,7 +113,7 @@
 		```
 	
 	
-	<img width="1571" height="850" alt="圖片" src="https://github.com/user-attachments/assets/326c2f6e-3b06-4b7e-8f34-2ab6c87e9fb0" />
+
 
 	- <img width="1552" height="673" alt="圖片" src="https://github.com/user-attachments/assets/b5e09081-fee5-40cb-83a4-f0c39eafb51e" />
 
