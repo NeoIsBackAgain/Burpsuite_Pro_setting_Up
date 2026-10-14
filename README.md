@@ -92,6 +92,24 @@
 		  -jar /usr/bin/BurpSuitePro/burpsuite_pro.jar
 
 		```
+   
+		mkdir -p ~/.local/share/applications  
+		```		
+		cat > ~/.local/share/applications/burpsuite-pro.desktop << 'EOF'
+		[Desktop Entry]
+		Type=Application
+		Name=Burp Suite Professional
+		Comment=Run Burp Suite Professional
+		Exec=/usr/bin/BurpSuitePro/run-burp.sh
+		Terminal=true
+		Icon=/usr/bin/BurpSuitePro/.install4j/BurpSuitePro.png
+		Categories=05-web-application-analysis;Development;Security;
+		StartupWMClass=install4j-burp-StartBurp
+		MimeType=application/x-extension-burp;
+		EOF
+		
+		chmod 644 ~/.local/share/applications/burpsuite-pro.desktop
+		```
 	
 	    ```
 		update-desktop-database ~/.local/share/applications
