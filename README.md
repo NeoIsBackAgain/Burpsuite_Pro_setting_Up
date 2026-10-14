@@ -101,7 +101,7 @@
 		Name=Burp Suite Professional
 		Comment=Run Burp Suite Professional
 		Exec=/usr/bin/BurpSuitePro/run-burp.sh
-		Terminal=true
+		Terminal=false
 		Icon=/usr/bin/BurpSuitePro/.install4j/BurpSuitePro.png
 		Categories=05-web-application-analysis;Development;Security;
 		StartupWMClass=install4j-burp-StartBurp
