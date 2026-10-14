@@ -4,6 +4,8 @@
 - Linux arm pro
   - https://portswigger.net/burp/releases#professional	
   - <img width="1499" height="894" alt="圖片" src="https://github.com/user-attachments/assets/108fc97b-058d-4384-a7dc-f6d393b6f5d1" />
+  - Burpsuite Pro 9.5
+  https://portswigger.net/burp/releases/download?product=pro&version=2025.9.5&type=Linux
 
 	```bash
 		cd /home/parallels/Downloads
